@@ -56,7 +56,7 @@ const App: React.FC = () => {
                 history={history}
               />
               <Route
-                path="/form/:page?"
+                path="/form/:page?/:substep?"
                 component={PageContainer}
                 history={history}
               />

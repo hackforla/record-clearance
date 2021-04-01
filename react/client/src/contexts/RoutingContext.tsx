@@ -32,7 +32,7 @@ const RoutingContextProvider = ({
     const prevNode = stepNode.prev;
     if (prevNode !== undefined) {
       updateStepNode(prevNode);
-      history.push(`/form/${prevNode.data.split('.')[1]}`);
+      history.push(`/form/${prevNode.data.split('.')[1]}/subby`);
     }
   };
 

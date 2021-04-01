@@ -32,6 +32,7 @@ interface PageProps {
   match: {
     params: {
       page: string;
+      substep?: string;
     };
     path: string;
   };
@@ -41,7 +42,14 @@ const PageContainer = ({ match }: PageProps) => {
   const useRoutingContext = () => React.useContext(RoutingContext);
   const useAffirmationContext = () => React.useContext(AffirmationContext);
 
-  const { pageNumber, formStep, goNextPage, goBackPage } = useRoutingContext();
+  const {
+    pageNumber,
+    formStep,
+    goNextPage,
+    goBackPage,
+  } = useRoutingContext();
+  const { substep } = match.params;
+
   const { affirmationData, updateAffirmationData } = useAffirmationContext();
   const isLandingPage = formStep === null;
 
@@ -75,6 +83,7 @@ const PageContainer = ({ match }: PageProps) => {
         <Form
           pageNumber={pageNumber}
           formStep={formStep}
+          substep={substep}
           goNextPage={goNextPage}
           goBackPage={goBackPage}
           onChangeAffirmation={updateAffirmationData}
