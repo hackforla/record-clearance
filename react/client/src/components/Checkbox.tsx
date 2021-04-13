@@ -31,7 +31,11 @@ const CheckboxLabels: React.FC<CheckProps> = ({ label, checked, onChange }) => {
   return (
     <FormControlLabel
       control={
-        <TealCheckbox checked={checked} onChange={onChange} name="checked" />
+        <TealCheckbox
+          checked={checked}
+          onChange={onChange}
+          name="checked"
+        />
       }
       label={label}
     />
